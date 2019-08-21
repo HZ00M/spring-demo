@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigdata.demo.mapper.TestMapper">
+    <select id="findAll" resultType="java.lang.String">
+        select name from t_test_test
+    </select>
+    <select id="testPage" parameterType="com.bigdata.demo.interceptor.PageParam" resultType="com.bigdata.demo.entity.Test">
+        select * from t_test_test
+    </select>
+    <select id="findOne" parameterType="java.lang.Integer" resultType="com.bigdata.demo.entity.Test">
+        select * from t_test_test where id = #{id}
+    </select>
+    <select id="findByIds" parameterType="java.util.List" resultType="com.bigdata.demo.entity.Test">
+        select * from t_test_test
+        where id in
+        <foreach collection="list" index="index" item="item" separator="," open="(" close=")">
+          #{item}
+        </foreach>
+    </select>
+</mapper>

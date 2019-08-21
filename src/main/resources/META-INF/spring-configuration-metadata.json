@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "proxy",
+      "type": "com.bigdata.demo.config.TopicAutoConfig",
+      "sourceType": "com.bigdata.demo.config.TopicAutoConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "proxy.topics",
+      "type": "java.util.List<java.lang.String",
+      "sourceType": "com.bigdata.demo.config.TopicAutoConfig"
+    }
+  ],
+  "hints": []
+}
