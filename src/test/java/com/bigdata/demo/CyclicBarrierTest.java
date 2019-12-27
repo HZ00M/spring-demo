@@ -27,4 +27,5 @@ public class CyclicBarrierTest {
             executor.execute(new CyclicBarrierTask(cyclicBarrier,testService));
         }
     }
+
 }

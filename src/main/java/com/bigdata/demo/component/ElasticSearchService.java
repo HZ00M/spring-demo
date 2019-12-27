@@ -3,6 +3,7 @@ package com.bigdata.demo.component;
 import com.alibaba.fastjson.JSON;
 import com.bigdata.demo.config.ElasticSearchConfig;
 import com.bigdata.demo.util.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -37,9 +38,9 @@ import java.util.List;
 import java.util.Map;
 
 @Component
+@Slf4j
 public class ElasticSearchService   {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     RestHighLevelClient client;
@@ -275,7 +276,7 @@ public class ElasticSearchService   {
         for (AggregationBuilder aggregationBuilder:aggregationBuilders){
             sourceBuilder.aggregation(aggregationBuilder);
         }
-        logger.info(sourceBuilder.toString());
+        log.info(sourceBuilder.toString());
         return sourceBuilder;
     }
 

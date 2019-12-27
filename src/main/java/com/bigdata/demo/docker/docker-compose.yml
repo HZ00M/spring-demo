@@ -1,0 +1,27 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - /app/redis/redis.conf:/etc/redis/redis.conf
+      - /home/docker/redis/data:/data
+    command: redis-server /etc/redis/redis.conf
+
+  traffic:
+    image: traffic:1.0
+    container_name: traffic
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /data/traffic/logs/:/data/traffic/app/logs
+    ports:
+      - 8001:8001
+    depends_on:
+      - redis
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
