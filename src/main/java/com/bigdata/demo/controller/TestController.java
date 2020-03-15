@@ -1,6 +1,7 @@
 package com.bigdata.demo.controller;
 
 import com.bigdata.demo.annotation.DataSource;
+import com.bigdata.demo.annotation.DistributedLock;
 import com.bigdata.demo.component.MsgProducer;
 import com.bigdata.demo.concurrent.CountDownLatchTask;
 import com.bigdata.demo.concurrent.CyclicBarrierTask;
@@ -37,10 +38,10 @@ public class TestController {
     @Autowired
     ConcurrentService concurrentService;
 
-    @Autowired
-    ZKConfig zkConfig;
+//    @Autowired
+//    ZKConfig zkConfig;
 
-    @Autowired
+//    @Autowired
     MsgProducer producer;
 
     @Autowired
@@ -113,7 +114,6 @@ public class TestController {
         return new Result().success();
     }
 
-    @ApiIgnore //使用该注解忽略这个API
     @RequestMapping("/findAllBigdataWithRedis")
     public Result findAllBigdataWithRedis(){
         return testService.findAllBigdataWithRedis();
@@ -130,13 +130,13 @@ public class TestController {
     }
 
     //配置中心
-    @ApiIgnore //使用该注解忽略这个API
-    @RequestMapping("/testZookeeper")
-    public void testZookeeper(){
-        String str1 = zkConfig.getConfig1();
-        String str2 = zkConfig.getConfig2();
-        System.out.println(str1);
-    }
+//    @ApiIgnore //使用该注解忽略这个API
+//    @RequestMapping("/testZookeeper")
+//    public void testZookeeper(){
+//        String str1 = zkConfig.getConfig1();
+//        String str2 = zkConfig.getConfig2();
+//        System.out.println(str1);
+//    }
 
     @ApiIgnore //使用该注解忽略这个API
     @RequestMapping("/testCountDown")
@@ -187,5 +187,18 @@ public class TestController {
     @RequestMapping("queryTest")
     public Result queryTest(int id)throws InterruptedException,ExecutionException{
         return concurrentService.queryTest(id);
+    }
+
+    @DistributedLock(expire = 1000,timeout = 1000)
+    @RequestMapping("testLock")
+    public Result testLock(){
+        try {
+            System.out.println("模拟执行业务逻辑。。。");
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return Result.error();
+        }
+        return Result.success();
     }
 }

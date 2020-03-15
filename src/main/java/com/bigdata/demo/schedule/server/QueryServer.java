@@ -1,9 +1,8 @@
 package com.bigdata.demo.schedule.server;
 
-import org.chiefdata.modules.smartbus.lineinfo.service.BusLineInfoService;
-import org.chiefdata.schedule.task.DefultOrderTask;
-import org.chiefdata.schedule.taskGroup.MapTaskGroup;
-import org.chiefdata.schedule.taskGroup.TaskGroup;
+import com.bigdata.demo.schedule.task.DefultOrderTask;
+import com.bigdata.demo.schedule.taskGroup.MapTaskGroup;
+import com.bigdata.demo.schedule.taskGroup.TaskGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 
@@ -21,8 +20,7 @@ import java.util.function.Function;
 //@Component
 public class QueryServer {
     ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
-    @Autowired
-    BusLineInfoService busLineInfoService;
+
     @Scheduled(fixedRate = 20000)
     public void task1() throws Exception {
         System.out.println(" 定时任务执行 ");

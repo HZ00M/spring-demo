@@ -1,8 +1,8 @@
 package com.bigdata.demo.schedule.taskGroup;
 
 
-import org.chiefdata.schedule.exception.QueryException;
-import org.chiefdata.schedule.task.OrderTask;
+import com.bigdata.demo.schedule.exception.QueryException;
+import com.bigdata.demo.schedule.task.OrderTask;
 
 import java.util.*;
 

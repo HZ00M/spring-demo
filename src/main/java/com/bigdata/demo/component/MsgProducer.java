@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-@Component
+//@Component
 public class MsgProducer implements RabbitTemplate.ConfirmCallback{
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

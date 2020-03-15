@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component
-@RabbitListeners({@RabbitListener(queues =  {RabbitConfig.QUEUE_A} ),@RabbitListener(queues =  {RabbitConfig.QUEUE_B} ),@RabbitListener(queues =  {RabbitConfig.QUEUE_C} )})
+//@Component
+//@RabbitListeners({@RabbitListener(queues =  {RabbitConfig.QUEUE_A} ),@RabbitListener(queues =  {RabbitConfig.QUEUE_B} ),@RabbitListener(queues =  {RabbitConfig.QUEUE_C} )})
 public class MsgReceiver {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

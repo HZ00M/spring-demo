@@ -1,6 +1,6 @@
 package com.bigdata.demo.schedule.taskGroup;
 
-import org.chiefdata.schedule.task.OrderTask;
+import com.bigdata.demo.schedule.task.OrderTask;
 
 import java.util.Collection;
 

@@ -5,8 +5,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 
-@Component
-@ConfigurationProperties(prefix = "config")
+//@Component
+//@ConfigurationProperties(prefix = "config")
 public class ZKConfig {
     @Value("${config1}")
     private  String config1 ;

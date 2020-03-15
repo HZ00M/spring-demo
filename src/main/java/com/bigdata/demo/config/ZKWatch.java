@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 //监听zookeeper节点变化
-@Component
+//@Component
 public class ZKWatch {
     @Value("${zk.url}")
     private String zkUrl;

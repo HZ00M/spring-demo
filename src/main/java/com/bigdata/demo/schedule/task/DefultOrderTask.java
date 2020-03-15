@@ -1,6 +1,6 @@
 package com.bigdata.demo.schedule.task;
 
-import org.chiefdata.schedule.exception.QueryException;
+import com.bigdata.demo.schedule.exception.QueryException;
 
 import java.util.function.Function;
 
