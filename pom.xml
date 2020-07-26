@@ -37,11 +37,11 @@
             <artifactId>jedis</artifactId>
         </dependency>
         <!--lombok-->
-        <dependency>
-       <groupId>org.projectlombok</groupId>
-       <artifactId>lombok</artifactId>
-       <version>1.16.16</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--   <groupId>org.projectlombok</groupId>-->
+        <!--   <artifactId>lombok</artifactId>-->
+        <!--   <version>1.16.22</version>-->
+    <!--</dependency>-->
         <!--elasticsearch-->
         <dependency>
             <groupId>org.elasticsearch</groupId>
@@ -169,11 +169,11 @@
 
         <!--netty-->
         <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.32.Final</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.netty</groupId>-->
+            <!--<artifactId>netty-all</artifactId>-->
+            <!--<version>4.1.32.Final</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 

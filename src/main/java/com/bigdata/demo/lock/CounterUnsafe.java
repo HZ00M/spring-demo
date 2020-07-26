@@ -44,9 +44,10 @@ public class CounterUnsafe {
                     countDownLatch.await();
 
                 for(int j =0;j<1000;j++){
-                    retryLock.lock();
-                    counterUnsafe.unsafeAdd();
-                    retryLock.unlock();
+//                    retryLock.lock();
+                    counterUnsafe.add();
+//                    counterUnsafe.unsafeAdd();
+//                    retryLock.unlock();
                 }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

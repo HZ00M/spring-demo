@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchTask implements Runnable{
 
-    private static CountDownLatch countDownLatch = new CountDownLatch(100);
+    private static CountDownLatch countDownLatch ;
 
     private List<Runnable> tasks ;
 
@@ -18,8 +18,8 @@ public class CountDownLatchTask implements Runnable{
     public void run() {
         try {
             tasks.forEach(t->{
-                countDownLatch.countDown();
                 t.run();
+                countDownLatch.countDown();
             });
         } catch (Exception e) {
             e.printStackTrace();

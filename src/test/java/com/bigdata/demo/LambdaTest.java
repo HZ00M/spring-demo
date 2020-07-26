@@ -3,6 +3,7 @@ package com.bigdata.demo;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -53,7 +54,7 @@ public class LambdaTest {
 
     @Test
     public void testSupplier(){
-        String name ="黄梓铭";
+        String name ="渡边";
         Supplier<String> supplier = ()->name.length()+"";
         System.out.println(supplier.get());
     }

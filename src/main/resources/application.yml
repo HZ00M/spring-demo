@@ -9,27 +9,28 @@ spring:
     active: dev
   resources:
     static-locations: classpath:/static/,classpath:/templates/
-  rabbitmq:
-    host: 192.168.1.128
-    port: 5672
-    username: admin
-    password: admin
-    publisher-confirms: true
-    virtual-host:
-    template:
-      mandatory: true
-    listener:
-      type: simple
-      simple:
-        acknowledge-mode: manual
-        concurrency: 5
-        max-concurrency: 100
-        default-requeue-rejected: true
+#  rabbitmq:
+#    host: 192.168.1.128
+#    port: 5672
+#    username: admin
+#    password: admin
+#    publisher-confirms: true
+#    virtual-host:
+#    template:
+#      mandatory: true
+#    listener:
+#      type: simple
+#      simple:
+#        acknowledge-mode: manual
+#        concurrency: 5
+#        max-concurrency: 100
+#        default-requeue-rejected: true
   redis:
     port: 6379
     host: 127.0.0.1
     timeout: 5000
     database: 0
+    
 
 #jasypt加密的密匙
 jasypt:

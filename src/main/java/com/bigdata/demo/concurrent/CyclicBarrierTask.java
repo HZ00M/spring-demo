@@ -4,17 +4,18 @@ import com.bigdata.demo.service.TestService;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.function.Supplier;
 
 
 public class CyclicBarrierTask implements Runnable {
 
-    TestService testService;
+    Supplier supplier;
 
     private CyclicBarrier cyclicBarrier ;
 
-    public CyclicBarrierTask(CyclicBarrier cyclicBarrier,TestService testService){
+    public CyclicBarrierTask(CyclicBarrier cyclicBarrier,Supplier supplier){
         this.cyclicBarrier = cyclicBarrier;
-        this.testService = testService;
+        this.supplier = supplier;
     }
 
     @Override
@@ -23,7 +24,7 @@ public class CyclicBarrierTask implements Runnable {
             System.out.println("到达集合点");
             cyclicBarrier.await();
             System.out.println("开始执行");
-            testService.findAllBigdataWithRedis();
+            supplier.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (BrokenBarrierException e) {

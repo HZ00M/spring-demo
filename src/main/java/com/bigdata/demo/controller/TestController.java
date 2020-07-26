@@ -125,8 +125,13 @@ public class TestController {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(10);
         Executor executor = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 10; i++) {
-            executor.execute(new CyclicBarrierTask(cyclicBarrier, testService));
+            executor.execute(new CyclicBarrierTask(cyclicBarrier, testService::findAllBigdataWithRedis));
         }
+    }
+
+    @RequestMapping("/testException")
+    public void testException() throws GlobalException {
+        throw new GlobalException(400,"testException");
     }
 
     //配置中心

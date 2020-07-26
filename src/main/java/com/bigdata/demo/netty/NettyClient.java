@@ -32,7 +32,7 @@ public class NettyClient {
         this.port = port;
     }
 
-    public void run() throws IOException {
+    public void run() throws IOException { 
         //设置一个多线程循环器
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         //启动附注类

@@ -4,9 +4,9 @@ spring:
       druid:
         dbtype: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://192.168.68.4:13306/bigdata?useUnicode=true&characterEncoding=UTF-8
+        url: jdbc:mysql://127.0.0.1:3306/sampdb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
         username: root
-        password: ENC(K1aS6OCugGidYvZ9xEtNSONd11JolX/8)
+        password: 123
         #      password: P@ssw0rd520!
         initial-size: 10
         max-active: 100

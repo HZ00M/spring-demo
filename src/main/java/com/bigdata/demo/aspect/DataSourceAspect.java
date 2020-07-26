@@ -27,7 +27,7 @@ public class DataSourceAspect implements Ordered {
     }
     //    Advice(通知、切面)： 某个连接点所采用的处理逻辑，也就是向连接点注入的代码， AOP在特定的切入点上执行的增强处理。
     //
-    // 1.1 @Before： 标识一个前置增强方法，相当于BeforeAdvice的功能.
+    //1.1 @Before： 标识一个前置增强方法，相当于BeforeAdvice的功能.
     //1.2 @After： final增强，不管是抛出异常或者正常退出都会执行.
     //1.3 @AfterReturning： 后置增强，似于AfterReturningAdvice, 方法正常退出时执行.
     //1.4 @AfterThrowing： 异常抛出增强，相当于ThrowsAdvice.

@@ -1,5 +1,6 @@
 package com.bigdata.demo.serviceImpl;
 
+import com.bigdata.demo.enums.Java8Enum;
 import com.bigdata.demo.service.DemoService;
 import com.bigdata.demo.service.DiscountService;
 import org.springframework.stereotype.Service;
@@ -18,12 +19,12 @@ public class DiscountServiceImpl implements DiscountService {
     }
 
     public double doDiscount(String type,double fee){
-        double discountFee = 0;
-        for (DemoService demoService :demoServiceList){
-            if (demoService.userType().equals(type)){
-               discountFee = demoService.discounFee(fee);
-            }
-        }
-        return discountFee;
+//        double discountFee = 0;
+//        for (DemoService demoService :demoServiceList){
+//            if (demoService.userType().equals(type)){
+//               discountFee = demoService.discounFee(fee);
+//            }
+//        }
+        return (double)Java8Enum.valueOf(type).getFunction().apply(fee);
     }
 }

@@ -21,8 +21,7 @@ public class BuilderTest {
     }
 }
 
-@Getter
-@Setter
+@Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor

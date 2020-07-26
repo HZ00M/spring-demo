@@ -1,5 +1,6 @@
 package com.bigdata.demo.config;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.http.HttpHost;
@@ -15,8 +16,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "elasticsearch")
-@Setter
-@Getter
+@Data
 public class ElasticSearchConfig {
     private String ip;
     private int port;
