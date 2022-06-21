@@ -19,7 +19,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <activemq-pool.version>5.15.9</activemq-pool.version>
         <mybatis.version>1.3.4</mybatis.version>
-        <mysql.version>8.0.19</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <jasypt.version>2.0.0</jasypt.version>
         <druid.version>1.1.9</druid.version>
         <swagger.version>2.6.1</swagger.version>
